@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Weather App</title>
+</head>
+<body>
+
+<h1>🌦 Weather App</h1>
+
+<input type="text" id="city" placeholder="Enter City Name">
+
+<button onclick="getWeather()">Search</button>
+
+<h2 id="result"></h2>
+
+<script>
+
+function getWeather(){
+
+let city =
+document.getElementById("city").value;
+
+document.getElementById("result").innerHTML =
+"Searching weather for " + city;
+
+}
+
+</script>
+
+</body>
+</html>

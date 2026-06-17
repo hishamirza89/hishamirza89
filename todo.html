@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>To-Do List</title>
+
+<style>
+body{
+text-align:center;
+font-family:Arial;
+background:#eaf2ff;
+}
+
+h1{
+color:#1e40af;
+}
+
+input{
+padding:10px;
+width:250px;
+}
+
+button{
+padding:10px 15px;
+background:#1e40af;
+color:white;
+border:none;
+border-radius:8px;
+}
+
+li{
+margin:10px;
+font-size:20px;
+}
+
+li{
+margin:10px;
+font-size:20px;
+list-style:none;
+}
+</style>
+
+</head>
+<body>
+
+<h1>My To-Do List</h1>
+
+<input type="text" id="task" placeholder="Enter Task">
+
+<button onclick="addTask()">Add Task</button>
+
+<button onclick="clearTasks()">Delete All Tasks</button>
+
+<p id="count">Tasks: 0</p>
+
+<ul id="list"></ul>
+
+<script>
+  
+let taskCount = 0;
+
+function addTask(){
+
+let task = document.getElementById("task").value;
+
+if(task == ""){
+alert("Please enter a task");
+return;
+}
+document.getElementById("list").innerHTML +=
+"<li>" + task +
+" <button onclick='this.parentElement.remove()'>❌</button></li>";
+
+taskCount++;
+
+document.getElementById("count").innerHTML =
+"Tasks: " + taskCount;
+
+document.getElementById("task").value = "";
+
+}
+
+function clearTasks(){
+
+document.getElementById("list").innerHTML = "";
+
+}
+</script>
+
+</body>
+</html>

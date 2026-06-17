@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quiz App</title>
+
+<style>
+
+body{
+text-align:center;
+font-family:Arial;
+background:#eaf2ff;
+padding-top:50px;
+}
+
+h1{
+color:#1e40af;
+}
+
+h2{
+color:#333;
+}
+
+button{
+padding:10px 20px;
+font-size:16px;
+background:#1e40af;
+color:white;
+border:none;
+border-radius:8px;
+}
+
+#result{
+font-size:25px;
+font-weight:bold;
+margin-top:20px;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>Quiz App</h1>
+
+<h2>What is 5 + 5 ?</h2>
+
+<input type="radio" name="answer" id="a1">
+<label for="a1">8</label>
+
+<br><br>
+
+<input type="radio" name="answer" id="a2">
+<label for="a2">10</label>
+
+<br><br>
+
+<input type="radio" name="answer" id="a3">
+<label for="a3">12</label>
+
+<br><br>
+
+<h2>HTML stands for?</h2>
+
+<input type="radio" name="answer2" id="b1">
+<label for="b1">Hyper Text Markup Language</label>
+
+<br><br>
+
+<input type="radio" name="answer2" id="b2">
+<label for="b2">High Text Machine Language</label>
+
+<br><br>
+
+<input type="radio" name="answer2" id="b3">
+<label for="b3">Home Tool Markup Language</label>
+
+<br><br>
+
+<button onclick="checkAnswer()">Submit</button>
+
+<p id="result"></p>
+
+<script>
+
+function checkAnswer(){
+
+let score = 0;
+
+if(document.getElementById("a2").checked){
+score++;
+}
+
+if(document.getElementById("b1").checked){
+score++;
+}
+
+document.getElementById("result").innerHTML =
+"🎯 Your Score: " + score + "/2";
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Expense Tracker</title>
+
+<style>
+body{
+font-family:Arial;
+text-align:center;
+padding:20px;
+background:#f5f5f5;
+}
+
+input{
+padding:10px;
+margin:5px;
+}
+
+button{
+padding:10px 20px;
+}
+
+li{
+margin:10px;
+}
+</style>
+
+</head>
+<body>
+
+<h1>💰 Expense Tracker</h1>
+
+<input type="text" id="item" placeholder="Expense Name">
+
+<input type="number" id="amount" placeholder="Amount">
+
+<br><br>
+
+<button onclick="addExpense()">Add Expense</button>
+
+<button onclick="clearExpenses()">Clear All</button>
+
+<h2 id="total">Total: ₹0</h2>
+
+<ul id="list"></ul>
+
+<script>
+
+let total = 0;
+
+function addExpense(){
+
+let item =
+document.getElementById("item").value;
+
+let amount =
+Number(document.getElementById("amount").value);
+
+total += amount;
+
+document.getElementById("total").innerHTML =
+"Total: ₹" + total;
+
+document.getElementById("list").innerHTML +=
+"<li>" + item + " - ₹" + amount + "</li>";
+
+}
+function clearExpenses(){
+
+document.getElementById("list").innerHTML = "";
+
+document.getElementById("total").innerHTML =
+"Total: ₹0";
+
+total = 0;
+
+}
+
+</script>
+
+</body>
+</html>
